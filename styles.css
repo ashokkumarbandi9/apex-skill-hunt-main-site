@@ -678,3 +678,30 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   color: #17243A !important;
   font-weight: 600 !important;
 }
+/* Transparent top navigation header */
+.site-header {
+  background: rgba(255, 255, 255, 0.22) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35) !important;
+  box-shadow: none !important;
+}
+
+/* Header when scrolling */
+.site-header.scrolled {
+  background: rgba(250, 252, 255, 0.88) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(210, 220, 235, 0.7) !important;
+  box-shadow: 0 4px 20px rgba(23, 43, 77, 0.06) !important;
+}
+
+/* Navigation text */
+.site-header .nav nav > a {
+  color: #172b4d !important;
+}
+
+.site-header .nav nav > a:hover,
+.site-header .nav nav .active {
+  color: #0759c7 !important;
+}
