@@ -218,7 +218,25 @@ a { color: inherit; }
 .btn.ghost:hover { background: #fff; }
 
 /* Hero — preserve image, brighten overlay for a light theme */
-.hero-overlay { background: linear-gradient(90deg, rgba(250,247,242,.97) 0%, rgba(250,247,242,.91) 38%, rgba(250,247,242,.68) 66%, rgba(250,247,242,.28) 100%), linear-gradient(0deg, rgba(250,247,242,.72), transparent 42%); }
+/* Soft white fog effect for hero background */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(250, 247, 242, 0.42) 0%,
+      rgba(250, 247, 242, 0.32) 30%,
+      rgba(250, 247, 242, 0.18) 60%,
+      rgba(250, 247, 242, 0.08) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0.04) 35%,
+      transparent 70%
+    ) !important;
+}
 .hero h1, .page-hero h1 { color: var(--apex-espresso); }
 .hero h1 em, .page-hero h1 em, h2 em { color: var(--apex-brown); }
 .eyebrow { color: var(--apex-brown); }
@@ -455,4 +473,208 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 @media (max-width: 620px) {
   .hero-overlay { background: linear-gradient(90deg,rgba(255,255,255,.97),rgba(255,255,255,.82)),linear-gradient(0deg,rgba(255,255,255,.25),transparent); }
+}
+/* ==========================================
+   APEX SKILL HUNT — SECTION & BLOCK LAYOUT
+   Clean White + Royal Blue Theme
+========================================== */
+
+:root {
+  --section-white: #ffffff;
+  --section-light: #f4f7fc;
+  --section-blue: #edf4ff;
+  --section-border: #dfe7f2;
+  --section-navy: #172b4d;
+  --section-blue-accent: #175cd3;
+  --section-muted: #637087;
+}
+
+/* Reduce excessive vertical gaps */
+.section {
+  padding: 75px 0;
+  position: relative;
+}
+
+.section-head {
+  margin-bottom: 34px;
+}
+
+.section-head h2 {
+  color: var(--section-navy);
+}
+
+.section-head p {
+  color: var(--section-muted);
+}
+
+/* Classroom gallery */
+.classroom-gallery {
+  background: var(--section-white);
+  border-top: 1px solid var(--section-border);
+  border-bottom: 1px solid var(--section-border);
+}
+
+/* Services — light blue block */
+.services {
+  background: var(--section-light);
+  border-bottom: 1px solid var(--section-border);
+}
+
+/* Why choose us — soft blue-white gradient */
+.split-section {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f1f6ff 100%
+  );
+  border-bottom: 1px solid var(--section-border);
+}
+
+/* College and company partners */
+.partners {
+  background: var(--section-white);
+  border-bottom: 1px solid var(--section-border);
+}
+
+/* Student experiences */
+.experiences {
+  background: #f3f6fb;
+  border-bottom: 1px solid var(--section-border);
+}
+
+/* Reusable white cards */
+.service,
+.logo-card,
+.testimonial,
+.value-grid article,
+.team-card {
+  background: #ffffff;
+  border: 1px solid var(--section-border);
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(26, 55, 95, 0.055);
+  color: var(--section-navy);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Card hover effect */
+.service:hover,
+.logo-card:hover,
+.testimonial:hover,
+.value-grid article:hover,
+.team-card:hover {
+  transform: translateY(-5px);
+  border-color: #a9c8fa;
+  box-shadow: 0 15px 32px rgba(26, 55, 95, 0.11);
+}
+
+/* Card text */
+.service h3,
+.value-grid h3,
+.team-info h3,
+.testimonial strong {
+  color: var(--section-navy);
+}
+
+.service p,
+.value-grid p,
+.testimonial p,
+.team-info p {
+  color: var(--section-muted);
+}
+
+/* Icons and small labels */
+.service-icon,
+.value-grid article > span,
+.team-role {
+  color: var(--section-blue-accent);
+}
+
+/* Keep experience photographs attractive */
+.experience-card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(26, 55, 95, 0.10);
+}
+
+/* Final call-to-action block */
+.cta {
+  background: linear-gradient(
+    115deg,
+    #edf4ff,
+    #ffffff 65%,
+    #e8f1ff
+  );
+  border-top: 1px solid var(--section-border);
+  border-bottom: 1px solid var(--section-border);
+}
+
+.cta h2 {
+  color: var(--section-navy);
+}
+
+.cta p {
+  color: var(--section-muted);
+}
+
+/* Consistent blue buttons */
+.btn.gold,
+.nav-button {
+  background: var(--section-blue-accent);
+  border-color: var(--section-blue-accent);
+  color: #ffffff !important;
+}
+
+.btn.gold:hover,
+.nav-button:hover {
+  background: #1249a8;
+}
+
+/* Mobile spacing */
+@media (max-width: 620px) {
+  .section {
+    padding: 55px 0;
+  }
+
+  .section-head {
+    margin-bottom: 26px;
+  }
+
+  .service {
+    min-height: 220px;
+  }
+}
+/* HERO TEXT — HIGH CONTRAST AND BOLDER */
+
+.hero h1 {
+  color: #17243A !important;
+  font-weight: 800 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+  -webkit-text-stroke: 0.4px currentColor;
+}
+
+.hero h1 em {
+  color: #064CB5 !important;
+  font-weight: 800 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+  -webkit-text-stroke: 0.5px currentColor;
+}
+
+.hero-copy > p {
+  color: #26374F !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+}
+
+.hero .eyebrow {
+  color: #0646A5 !important;
+  font-weight: 800 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+.hero .side-card span {
+  color: #17243A !important;
+  font-weight: 600 !important;
 }
