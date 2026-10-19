@@ -1,7 +1,22 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>About Us | Apex Skill Hunt</title><link rel="icon" href="assets/apex-logo.png"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="theme-color" content="#08090b"><meta name="description" content="Apex Skill Hunt partners with colleges for practical technical, aptitude, coding and placement-readiness training."><title>About Us | Apex Skill Hunt</title><link rel="icon" href="assets/apex-logo.png"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><script data-theme-bootstrap>
+(() => {
+  try {
+    const saved = localStorage.getItem('apex-theme');
+    const choice = saved === 'light' || saved === 'dark' ? saved : 'system';
+    const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.dataset.themeChoice = choice;
+    document.documentElement.dataset.theme = choice === 'system' ? (systemDark ? 'dark' : 'light') : choice;
+  } catch (_) {
+    const dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.dataset.themeChoice = 'system';
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  }
+})();
+</script>
+<link rel="stylesheet" href="styles.css"></head>
 <body>
-<header class="site-header" id="header"><div class="container nav"><a class="brand" href="index.html"><img src="assets/apex-logo.png" alt="Apex Skill Hunt"></a><button class="menu">☰</button><nav><a href="index.html">Home</a><a class="active" href="about.html">About Us</a><a href="contact.html">Contact</a><a class="mock-test-link" href="#" data-link-pending="true" title="Mock Test link will be added soon">Mock Test</a><a class="nav-button" href="contact.html">Get in Touch →</a></nav></div></header>
+<header class="site-header" id="header"><div class="container nav"><a class="brand" href="index.html"><img src="assets/apex-logo.png" alt="Apex Skill Hunt"></a><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode" aria-pressed="false"><span class="theme-toggle-icon" aria-hidden="true">☼</span><span class="theme-toggle-label">Light mode</span></button><button class="menu">☰</button><nav><a href="index.html">Home</a><a class="active" href="about.html">About Us</a><a href="contact.html">Contact</a><a class="mock-test-link" href="https://exams.apexskillhunt.in">Mock Test ↗</a><a class="nav-button" href="contact.html">Get in Touch →</a></nav></div></header>
 <main>
 <section class="page-hero"><div class="container reveal"><div class="eyebrow">ABOUT APEX SKILL HUNT</div><h1>Skills that create <em>opportunities.</em></h1><p>Practical, structured and placement-focused training for students and institutions.</p></div></section>
 <section class="section team-section" id="leadership">
@@ -59,5 +74,6 @@
 
 
 
-<footer><div class="container footer-grid"><div><img src="assets/apex-logo.png" class="footer-logo"><p>Learn. Practice. Get Placed.</p></div><div><h4>Explore</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="contact.html">Contact</a><a class="mock-test-link" href="#" data-link-pending="true" title="Mock Test link will be added soon">Mock Test</a></div><div><h4>Services</h4><span>Aptitude & Reasoning</span><span>Technical Training</span><span>Cloud & DevOps</span><span>Placement Support</span></div><div><h4>Contact</h4><a href="tel:+917095639653">+91 70956 39653</a><a href="mailto:info@apexskillhunt.in">info@apexskillhunt.in</a></div></div><div class="container copyright">© 2026 Apex Skill Hunt. All Rights Reserved.</div></footer>
-<script src="script.js"></script></body></html>
+<footer><div class="container footer-grid"><div><img src="assets/apex-logo.png" class="footer-logo"><p>Learn. Practice. Get Placed.</p></div><div><h4>Explore</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="contact.html">Contact</a><a class="mock-test-link" href="https://exams.apexskillhunt.in">Mock Test ↗</a></div><div><h4>Services</h4><span>Aptitude & Reasoning</span><span>Technical Training</span><span>Cloud & DevOps</span><span>Placement Support</span></div><div><h4>Contact</h4><a href="tel:+917095639653">+91 70956 39653</a><a href="mailto:info@apexskillhunt.in">info@apexskillhunt.in</a></div></div><div class="container copyright">© 2026 Apex Skill Hunt. All Rights Reserved.</div></footer>
+<script src="script.js"></script><script src="theme.js" defer></script>
+</body></html>

@@ -3,181 +3,126 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Apex Skill Hunt - Industry-focused training and placement programs.">
-<title>Apex Skill Hunt | Learn. Practice. Get Placed.</title>
+<meta name="theme-color" content="#08090b">
+<meta name="description" content="Apex Skill Hunt partners with colleges to deliver industry-focused aptitude, technical, coding and placement training. Learn. Practice. Get Placed.">
+<title>Apex Skill Hunt | Skills That Move Careers Forward</title>
 <link rel="icon" href="assets/apex-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script data-theme-bootstrap>
+(() => {
+  try {
+    const saved = localStorage.getItem('apex-theme');
+    const choice = saved === 'light' || saved === 'dark' ? saved : 'system';
+    const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.dataset.themeChoice = choice;
+    document.documentElement.dataset.theme = choice === 'system' ? (systemDark ? 'dark' : 'light') : choice;
+  } catch (_) {
+    const dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.dataset.themeChoice = 'system';
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  }
+})();
+</script>
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-
+<body class="home-page">
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
 <header class="site-header" id="header">
   <div class="container nav">
-    <a class="brand" href="index.html"><img src="assets/apex-logo.png" alt="Apex Skill Hunt"></a>
-    <button class="menu" aria-label="Menu">☰</button>
-    <nav>
+    <a class="brand" href="index.html" aria-label="Apex Skill Hunt home"><img src="assets/apex-logo.png" alt="Apex Skill Hunt"></a>
+    <button class="menu" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+    <nav aria-label="Main navigation">
       <a class="active" href="index.html">Home</a>
       <a href="about.html">About Us</a>
-      <a href="#contact">Contact</a>
-      <a class="mock-test-link" href="#" data-link-pending="true" title="Mock Test link will be added soon">Mock Test</a>
-      <a class="nav-button" href="contact.html">Get in Touch <span>→</span></a>
+      <a href="#services">Programs</a>
+      <a href="#partners">Our Network</a>
+      <a class="mock-test-link" href="https://exams.apexskillhunt.in">Mock Test <span class="nav-arrow">↗</span></a>
+      <a class="nav-button" href="contact.html">Let's Talk <span>↗</span></a>
     </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode" aria-pressed="false" title="Switch theme"><span class="theme-toggle-icon" aria-hidden="true">☼</span><span class="theme-toggle-label">Light mode</span></button>
   </div>
 </header>
-
 <main>
-<section class="hero">
-  <div class="hero-image"></div>
-  <div class="hero-overlay"></div>
+<section class="hero hero-modern" id="top">
+  <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
   <div class="container hero-inner">
     <div class="hero-copy reveal">
-      <div class="eyebrow">TRAINING &nbsp;|&nbsp; PLACEMENT &nbsp;|&nbsp; CAREER GROWTH</div>
-      <h1>Empowering Students.<br><em>Building Careers.</em></h1>
-      <p>Apex Skill Hunt provides industry-focused training and placement preparation to help students build skills, gain confidence and achieve successful careers.</p>
+      <div class="eyebrow"><span class="eyebrow-dot"></span> TRAINING · TECHNOLOGY · PLACEMENT</div>
+      <h1>Build skills.<br>Unlock <span class="gradient-text">what's next.</span></h1>
+      <p class="hero-description">We help colleges turn potential into career readiness with practical training, smarter assessments and placement-focused learning.</p>
       <div class="actions">
-        <a class="btn gold" href="#services">Explore Our Services <span>→</span></a>
-        <a class="btn ghost" href="contact.html">Contact Us</a>
+        <a class="btn primary-btn" href="#services">Explore our programs <span>↗</span></a>
+        <a class="btn text-btn" href="contact.html">Partner with us <span>→</span></a>
       </div>
+      <div class="hero-proof"><div class="proof-avatars"><span>A</span><span>S</span><span>T</span></div><div><strong>Built for the next generation</strong><small>College-focused. Outcome-driven.</small></div></div>
     </div>
-    <div class="hero-side reveal delay-2">
-      <div class="side-card">
-        <div><b>✦</b><span>Skill Development</span></div>
-        <div><b>▥</b><span>Industry Exposure</span></div>
-        <div><b>♙</b><span>Placement Support</span></div>
-      </div>
+    <div class="hero-visual reveal delay-2" id="heroVisual" aria-label="Illustration of a connected learning and career journey">
+      <canvas id="apex3d" class="apex-3d-canvas" aria-hidden="true"></canvas><div class="visual-glow"></div>
+      <figure class="hero-image-frame"><img id="heroSlideshowImage" src="assets/apex-coding-workshop.png" alt="Apex Skill Hunt trainer teaching a coding workshop" fetchpriority="high"><figcaption class="hero-image-caption"><span>APEX SKILL HUNT</span><strong id="heroSlideshowCaption">Hands-on coding workshops</strong></figcaption></figure>
+      <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+      <div class="float-card card-learning"><span class="float-icon purple">✳</span><span><strong>Learn with purpose</strong><small>Structured programs</small></span><i>↗</i></div>
+      <div class="float-card card-progress"><span class="progress-ring">✓</span><span><strong>Practice. Improve.</strong><small>Skills that stay with you</small></span></div>
+      <div class="floating-tag"><span class="tag-pulse"></span> CAREER-READY LEARNING</div>
+      <div class="visual-index"><span id="heroSlideCurrent">01</span> <span>/</span> 03</div>
     </div>
   </div>
-  <div class="hero-curve"></div>
+  <div class="hero-bottom container"><span>SCROLL TO EXPLORE</span><div class="scroll-line"><span></span></div><span class="hero-bottom-note">A better way to prepare for what comes next.</span></div>
 </section>
-<section class="section classroom-gallery" id="classroom-experience">
+<section class="trust-strip" aria-label="Apex Skill Hunt focus areas"><div class="container trust-inner"><span>MADE FOR COLLEGES</span><b>Placement Training</b><i></i><b>Technical Skills</b><i></i><b>Mock Assessments</b><i></i><b>Career Readiness</b></div></section>
+<section class="section services services-modern" id="services">
   <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">APEX IN ACTION</div>
-      <h2>Learning happens <em>in the classroom.</em></h2>
-      <p>Snapshots from our live training sessions, where concepts become practice and students build confidence together.</p>
+    <div class="section-head reveal"><div class="eyebrow">WHAT WE DO</div><h2>Practical learning.<br><span class="gradient-text">Measurable progress.</span></h2><p>Flexible training programs designed around your students, curriculum and placement goals.</p></div>
+    <div class="service-grid modern-service-grid">
+      <article class="service modern-service reveal tilt-card"><div class="service-top"><span class="service-icon icon-lilac">◈</span><span class="service-index">01 / 06</span></div><h3>Aptitude & Reasoning</h3><p>Build speed, accuracy and confidence in quantitative aptitude, logical reasoning and placement assessments.</p><a href="contact.html" aria-label="Ask about aptitude and reasoning training">Explore program <span>↗</span></a><div class="service-watermark">01</div></article>
+      <article class="service modern-service reveal tilt-card"><div class="service-top"><span class="service-icon icon-blue">Aa</span><span class="service-index">02 / 06</span></div><h3>Verbal & Communication</h3><p>Develop grammar, vocabulary, comprehension and the communication skills employers expect.</p><a href="contact.html" aria-label="Ask about verbal and communication training">Explore program <span>↗</span></a><div class="service-watermark">02</div></article>
+      <article class="service modern-service reveal tilt-card"><div class="service-top"><span class="service-icon icon-mint">⌘</span><span class="service-index">03 / 06</span></div><h3>Coding & Programming</h3><p>Turn concepts into code through programming fundamentals, DSA and guided coding practice.</p><a href="contact.html" aria-label="Ask about coding and programming training">Explore program <span>↗</span></a><div class="service-watermark">03</div></article>
+      <article class="service modern-service reveal tilt-card"><div class="service-top"><span class="service-icon icon-peach">⌁</span><span class="service-index">04 / 06</span></div><h3>Technical Training</h3><p>Hands-on, industry-oriented learning with practical exercises, projects and guided instruction.</p><a href="contact.html" aria-label="Ask about technical training">Explore program <span>↗</span></a><div class="service-watermark">04</div></article>
+      <article class="service modern-service reveal tilt-card"><div class="service-top"><span class="service-icon icon-sky">☁</span><span class="service-index">05 / 06</span></div><h3>Cloud & DevOps</h3><p>Explore AWS, Linux, Docker, Kubernetes, CI/CD and modern cloud engineering workflows.</p><a href="contact.html" aria-label="Ask about Cloud and DevOps training">Explore program <span>↗</span></a><div class="service-watermark">05</div></article>
+      <article class="service modern-service reveal tilt-card"><div class="service-top"><span class="service-icon icon-gold">↗</span><span class="service-index">06 / 06</span></div><h3>Placement Preparation</h3><p>Prepare with mock tests, interview practice, resume guidance and structured feedback.</p><a href="https://exams.apexskillhunt.in" aria-label="Open Apex Skill Hunt mock tests">Try mock tests <span>↗</span></a><div class="service-watermark">06</div></article>
     </div>
   </div>
-  <div class="classroom-marquee" aria-label="Photos from Apex Skill Hunt classroom training sessions">
-    <div class="marquee-track marquee-forward">
-      <figure class="classroom-shot"><img src="assets/classroom/classroom-02.jpg" alt="Trainer explaining aptitude concepts on the board" loading="lazy"><figcaption>Aptitude Concepts in Practice</figcaption></figure>
-      <figure class="classroom-shot"><img src="assets/classroom/classroom-03.jpg" alt="Students attending a classroom training session" loading="lazy"><figcaption>Focused Student Learning</figcaption></figure>
-      <figure class="classroom-shot"><img src="assets/classroom/classroom-04.jpg" alt="Trainer engaging with students during a lesson" loading="lazy"><figcaption>Learning Through Discussion</figcaption></figure>
-      <figure class="classroom-shot"><img src="assets/classroom/classroom-05.jpg" alt="Students participating in an instructor-led session" loading="lazy"><figcaption>Active Participation</figcaption></figure>
-      <figure class="classroom-shot"><img src="assets/classroom/classroom-02.jpg" alt="Trainer explaining aptitude concepts on the board" loading="lazy"><figcaption>Aptitude Concepts in Practice</figcaption></figure>
-      <figure class="classroom-shot"><img src="assets/classroom/classroom-03.jpg" alt="Students attending a classroom training session" loading="lazy"><figcaption>Focused Student Learning</figcaption></figure>
-      <figure class="classroom-shot"><img src="assets/classroom/classroom-04.jpg" alt="Trainer engaging with students during a lesson" loading="lazy"><figcaption>Learning Through Discussion</figcaption></figure>
-    </div>
-  </div>
-  <div class="classroom-marquee classroom-marquee-second" aria-label="More Apex Skill Hunt classroom moments">
-    <div class="marquee-track marquee-reverse">
-      <figure class="classroom-shot"><img src="assets/classroom/classroom-05.jpg" alt="Students participating in an instructor-led session" loading="lazy"><figcaption>Active Participation</figcaption></figure>
-      <figure class="classroom-shot"><img src="assets/classroom/classroom-06.jpg" alt="Students learning technical concepts in class" loading="lazy"><figcaption>Technical Learning Sessions</figcaption></figure>
-      <figure class="classroom-shot"><img src="assets/classroom/classroom-07.jpg" alt="A classroom full of students attending training" loading="lazy"><figcaption>Building Skills Together</figcaption></figure>
-      <figure class="classroom-shot"><img src="assets/classroom/classroom-05.jpg" alt="Students participating in an instructor-led session" loading="lazy"><figcaption>Active Participation</figcaption></figure>
-      <figure class="classroom-shot"><img src="assets/classroom/classroom-06.jpg" alt="Students learning technical concepts in class" loading="lazy"><figcaption>Technical Learning Sessions</figcaption></figure>
-      <figure class="classroom-shot"><img src="assets/classroom/classroom-07.jpg" alt="A classroom full of students attending training" loading="lazy"><figcaption>Building Skills Together</figcaption></figure>
+</section>
+<section class="section classroom-modern">
+  <div class="container"><div class="section-head reveal"><div class="eyebrow">APEX IN ACTION</div><h2>Learning is better<br><span class="gradient-text">when it comes to life.</span></h2><p>Real classroom moments. Shared questions. Skills built together.</p></div></div>
+  <div class="classroom-marquee" aria-label="Photos from Apex Skill Hunt classroom training sessions"><div class="marquee-track marquee-forward">
+    <figure class="classroom-shot"><img src="assets/classroom/classroom-01.jpg" alt="Students participating in an Apex Skill Hunt classroom training session" loading="lazy"><figcaption>Classroom learning <span>↗</span></figcaption></figure>
+    <figure class="classroom-shot"><img src="assets/classroom/classroom-02.jpg" alt="Trainer explaining aptitude concepts" loading="lazy"><figcaption>Aptitude in practice <span>↗</span></figcaption></figure>
+    <figure class="classroom-shot"><img src="assets/classroom/classroom-03.jpg" alt="Students attending a training session" loading="lazy"><figcaption>Focused learning <span>↗</span></figcaption></figure>
+    <figure class="classroom-shot"><img src="assets/classroom/classroom-04.jpg" alt="Trainer engaging with students" loading="lazy"><figcaption>Learning through discussion <span>↗</span></figcaption></figure>
+    <figure class="classroom-shot"><img src="assets/classroom/classroom-05.jpg" alt="Students participating in a session" loading="lazy"><figcaption>Active participation <span>↗</span></figcaption></figure>
+    <figure class="classroom-shot"><img src="assets/classroom/classroom-06.jpg" alt="Technical training in a classroom" loading="lazy"><figcaption>Technical exploration <span>↗</span></figcaption></figure>
+    <figure class="classroom-shot"><img src="assets/classroom/classroom-07.jpg" alt="Students learning together" loading="lazy"><figcaption>Growing together <span>↗</span></figcaption></figure>
+  </div></div>
+</section>
+<section class="section journey-section">
+  <div class="container journey-grid">
+    <div class="journey-copy reveal"><div class="eyebrow">THE APEX METHOD</div><h2>A clear path from<br><span class="gradient-text">learning to doing.</span></h2><p>Students learn more when every concept connects to a real task. Our approach combines expert-led sessions with practice, feedback and placement-focused preparation.</p><a class="inline-link" href="about.html">Get to know Apex <span>↗</span></a></div>
+    <div class="journey-steps">
+      <article class="journey-step reveal"><div class="step-number">01</div><div class="step-line"></div><div><span>FOUNDATION</span><h3>Learn the fundamentals</h3><p>Structured sessions that make essential concepts clear and approachable.</p></div><div class="step-symbol">◌</div></article>
+      <article class="journey-step reveal"><div class="step-number">02</div><div class="step-line"></div><div><span>APPLICATION</span><h3>Practice with purpose</h3><p>Exercises, coding challenges and mock assessments reinforce every lesson.</p></div><div class="step-symbol">⌘</div></article>
+      <article class="journey-step reveal"><div class="step-number">03</div><div class="step-line"></div><div><span>READINESS</span><h3>Show up with confidence</h3><p>Feedback and interview preparation help students approach opportunities ready.</p></div><div class="step-symbol">↗</div></article>
     </div>
   </div>
 </section>
 
-
-<section class="section services" id="services">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">WHAT WE DO</div>
-      <h2>Training built around <em>real outcomes.</em></h2>
-    </div>
-    <div class="service-grid">
-      <article class="service reveal"><span class="number">01</span><div class="service-icon">▥</div><h3>Aptitude & Reasoning</h3><p>Quantitative aptitude, logical reasoning and placement-test problem solving.</p></article>
-      <article class="service reveal"><span class="number">02</span><div class="service-icon">⌘</div><h3>Verbal Ability</h3><p>Grammar, vocabulary, communication and verbal reasoning for placements.</p></article>
-      <article class="service reveal"><span class="number">03</span><div class="service-icon">&lt;/&gt;</div><h3>Coding & Programming</h3><p>Programming fundamentals, DSA, coding practice and technical preparation.</p></article>
-      <article class="service reveal"><span class="number">04</span><div class="service-icon">⚙</div><h3>Technical Training</h3><p>Industry-oriented technical training with practical learning and projects.</p></article>
-      <article class="service reveal"><span class="number">05</span><div class="service-icon">☁</div><h3>Cloud & DevOps</h3><p>AWS, Linux, Docker, Kubernetes, Jenkins, Terraform and more.</p></article>
-      <article class="service reveal"><span class="number">06</span><div class="service-icon">▣</div><h3>Placement Preparation</h3><p>Mock tests, interview preparation, resumes and career guidance.</p></article>
-    </div>
+<section class="section partners partners-modern" id="partners"><div class="container">
+  <div class="partner-block reveal"><div class="section-head compact"><div class="eyebrow">OUR INSTITUTIONAL NETWORK</div><h2>Built through <span class="gradient-text">partnership.</span></h2><p>We collaborate with institutions to support student development and placement readiness.</p></div>
+    <div class="logo-grid college-grid"><div class="logo-card"><div class="logo-text vignan">VIGNAN LARA</div><small>Guntur, Andhra Pradesh</small></div><div class="logo-card"><div class="logo-text seat">SEAT</div><small>Tirupati, Andhra Pradesh</small></div><div class="logo-card"><div class="logo-text mmu">MMU</div><small>Mullana, Haryana</small></div><div class="logo-card"><div class="logo-text shiv">SHIV SHIVANI</div><small>Degree College</small></div></div>
   </div>
-</section>
-
-<section class="section split-section">
-  <div class="container split-grid">
-    <div class="split-copy reveal">
-      <div class="eyebrow">THE APEX APPROACH</div>
-      <h2>From classroom learning to <em>career confidence.</em></h2>
-      <p>We combine structured curriculum, hands-on practice, assessments, projects and interview preparation to create a complete placement journey.</p>
-      <div class="mini-stats">
-        <div><strong>01</strong><span>Structured Curriculum</span></div>
-        <div><strong>02</strong><span>Hands-on Practice</span></div>
-        <div><strong>03</strong><span>Industry Exposure</span></div>
-      </div>
-    </div>
-    <div class="student-photo reveal delay-2">
-      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=85" alt="Students learning together" loading="lazy">
-      <div class="photo-caption">Learn • Practice • Get Placed</div>
-    </div>
-  </div>
-</section>
-
-
-
-
-<section class="section partners">
-  <div class="container">
-    <div class="partner-block reveal">
-      <div class="section-head compact"><div class="eyebrow">OUR NETWORK</div><h2>Partner <em>Colleges.</em></h2><p>Institutions we have worked with for training and placement-focused programs.</p></div>
-      <div class="logo-grid college-grid">
-        <div class="logo-card"><div class="logo-text vignan">VIGNAN LARA</div><small>Guntur, AP</small></div>
-        <div class="logo-card"><div class="logo-text seat">SEAT</div><small>Tirupati, AP</small></div>
-        <div class="logo-card"><div class="logo-text mmu">MMU</div><small>Mullana, Haryana</small></div>
-        <div class="logo-card"><div class="logo-text shiv">SHIV SHIVANI</div><small>Degree College</small></div>
-      </div>
-    </div>
-
-    <div class="partner-block company-block reveal">
-      <div class="section-head compact"><div class="eyebrow">CAREER OUTCOMES</div><h2>Companies our students <em>work at.</em></h2><p>Companies represented in the career outcomes referenced by Apex Skill Hunt.</p></div>
-      <div class="logo-grid company-grid">
-        <div class="logo-card company">TCS</div><div class="logo-card company">HCLTech</div><div class="logo-card company">Tech Mahindra</div>
-        <div class="logo-card company google">Google</div><div class="logo-card company amazon">amazon<span>smile</span></div><div class="logo-card company">Infosys</div>
-        <div class="logo-card company">Wipro</div><div class="logo-card company">Accenture</div><div class="logo-card company">Capgemini</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section experiences">
-  <div class="container">
-    <div class="section-head reveal"><div class="eyebrow">STUDENT EXPERIENCES</div><h2>Real learning. <em>Real growth.</em></h2></div>
-    <div class="experience-grid">
-      <article class="experience-card large pop"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=85" alt="Students collaborating" loading="lazy"><div><span>Hands-on Learning</span><h3>Build skills together.</h3></div></article>
-      <article class="experience-card pop"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85" alt="Student working on laptop" loading="lazy"><div><span>Technical Practice</span><h3>Practice beyond theory.</h3></div></article>
-      <article class="experience-card pop"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85" alt="Young professionals collaborating" loading="lazy"><div><span>Career Ready</span><h3>Prepare for what's next.</h3></div></article>
-    </div>
-    <div class="testimonial-row">
-      <article class="testimonial pop"><b>“</b><p>The aptitude sessions helped me approach placement problems with much more confidence.</p><strong>Student Feedback</strong><small>Apex Skill Hunt Program</small></article>
-      <article class="testimonial pop"><b>“</b><p>The technical training and mock interviews made the placement preparation practical and clear.</p><strong>Student Feedback</strong><small>Apex Skill Hunt Program</small></article>
-      <article class="testimonial pop"><b>“</b><p>Structured sessions, practice and interview preparation made the learning journey easier.</p><strong>Student Feedback</strong><small>Apex Skill Hunt Program</small></article>
-    </div>
-  </div>
-</section>
-
-<section class="cta" id="contact">
-  <div class="container cta-inner reveal">
-    <div><div class="eyebrow">FOR COLLEGES & UNIVERSITIES</div><h2>Let's build better <em>careers together.</em></h2><p>Discuss a customized training and placement program for your institution.</p></div>
-    <a class="btn gold" href="contact.html">Start a Conversation <span>→</span></a>
-  </div>
-</section>
+  <div class="partner-block company-block reveal"><div class="section-head compact"><div class="eyebrow">CAREER LANDSCAPE</div><h2>Prepare for a world of <span class="gradient-text">opportunity.</span></h2><p>Our placement preparation is designed around the skills and assessments used across today's hiring landscape.</p></div><div class="logo-grid company-grid"><div class="logo-card company">TCS</div><div class="logo-card company">HCLTech</div><div class="logo-card company">Tech Mahindra</div><div class="logo-card company google">Google</div><div class="logo-card company amazon">amazon<span>smile</span></div><div class="logo-card company">Infosys</div><div class="logo-card company">Wipro</div><div class="logo-card company">Accenture</div><div class="logo-card company">Capgemini</div></div><p class="partner-note">Company names are illustrative of the broader placement landscape and do not imply affiliation or guaranteed placement.</p></div>
+</div></section>
+<section class="section experiences experiences-modern"><div class="container"><div class="section-head reveal"><div class="eyebrow">WHY APEX</div><h2>More than a session.<br><span class="gradient-text">A stronger foundation.</span></h2></div>
+  <div class="benefit-grid"><article class="benefit-card reveal"><span>01</span><div class="benefit-icon">◎</div><h3>Designed around colleges</h3><p>Programs can be aligned to your students' level, timeline and placement priorities.</p></article><article class="benefit-card reveal"><span>02</span><div class="benefit-icon">✳</div><h3>Practice-led learning</h3><p>Students apply concepts through exercises, assessments and hands-on activities.</p></article><article class="benefit-card reveal"><span>03</span><div class="benefit-icon">↗</div><h3>Progress with direction</h3><p>A structured journey helps students understand what to learn and how to improve.</p></article></div>
+</div></section>
+<section class="cta cta-modern" id="contact"><div class="cta-shape shape-one"></div><div class="cta-shape shape-two"></div><div class="container cta-inner reveal"><div><div class="eyebrow">FOR COLLEGES & UNIVERSITIES</div><h2>Let's make the next<br><span>step count.</span></h2><p>Tell us about your institution and we'll help you explore a training program that fits.</p></div><a class="btn cta-button" href="contact.html">Discuss a program <span>↗</span></a></div></section>
 </main>
-
-<footer>
-  <div class="container footer-grid">
-    <div><img src="assets/apex-logo.png" class="footer-logo" alt="Apex Skill Hunt"><p>Learn. Practice. Get Placed.</p></div>
-    <div><h4>Explore</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
-    <div><h4>Services</h4><span>Aptitude & Reasoning</span><span>Technical Training</span><span>Cloud & DevOps</span><span>Placement Support</span></div>
-    <div><h4>Contact</h4><a href="tel:+917095639653">+91 70956 39653</a><a href="mailto:info@apexskillhunt.in">info@apexskillhunt.in</a><span>apexskillhunt.in</span></div>
-  </div>
-  <div class="container copyright">© 2026 Apex Skill Hunt. All Rights Reserved.</div>
-</footer>
+<footer class="footer-modern"><div class="container footer-grid"><div class="footer-brand"><img src="assets/apex-logo.png" class="footer-logo" alt="Apex Skill Hunt"><p>Learn. Practice. Get Placed.</p><small>Building skills for a changing world.</small></div><div><h4>Explore</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="#services">Programs</a><a href="#partners">Our Network</a></div><div><h4>Programs</h4><a href="#services">Aptitude & Reasoning</a><a href="#services">Technical Training</a><a href="#services">Cloud & DevOps</a><a href="https://exams.apexskillhunt.in">Mock Tests</a></div><div><h4>Get in touch</h4><a href="tel:+917095639653">+91 70956 39653</a><a href="tel:+919392198595">+91 93921 98595</a><a href="mailto:info@apexskillhunt.in">info@apexskillhunt.in</a><a href="https://apexskillhunt.in">apexskillhunt.in</a></div></div><div class="container copyright"><span>© 2026 Apex Skill Hunt. All rights reserved.</span><a href="#top">Back to top ↑</a></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
 <script src="script.js"></script>
-</body>
-</html>
+<script src="hero-slideshow.js" defer></script>
+<script type="module" src="cinematic.js"></script>
+<script src="theme.js" defer></script>
+</body></html>

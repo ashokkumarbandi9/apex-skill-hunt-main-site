@@ -3,19 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="theme-color" content="#08090b"><meta name="description" content="Apex Skill Hunt partners with colleges for practical technical, aptitude, coding and placement-readiness training.">
     <title>Contact | Apex Skill Hunt</title>
     <link rel="icon" href="assets/apex-logo.png">
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <script data-theme-bootstrap>
+(() => {
+  try {
+    const saved = localStorage.getItem('apex-theme');
+    const choice = saved === 'light' || saved === 'dark' ? saved : 'system';
+    const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.dataset.themeChoice = choice;
+    document.documentElement.dataset.theme = choice === 'system' ? (systemDark ? 'dark' : 'light') : choice;
+  } catch (_) {
+    const dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.dataset.themeChoice = 'system';
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  }
+})();
+</script>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header class="site-header" id="header">
         <div class="container nav"><a class="brand" href="index.html"><img src="assets/apex-logo.png"
-                    alt="Apex Skill Hunt"></a><button class="menu">☰</button>
+                    alt="Apex Skill Hunt"></a><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode" aria-pressed="false"><span class="theme-toggle-icon" aria-hidden="true">☼</span><span class="theme-toggle-label">Light mode</span></button><button class="menu">☰</button>
             <nav><a href="index.html">Home</a><a href="about.html">About Us</a><a class="active"
                     href="contact.html">Contact</a><a class="nav-button" href="contact.html">Get in Touch →</a></nav>
         </div>
@@ -50,7 +65,7 @@
                             placeholder="+91"></label><label>Message<textarea required name="message" rows="6"
                             placeholder="Tell us about your training requirement..."></textarea></label><button
                         class="btn gold" type="submit">Send Enquiry →</button>
-                    <p class="form-success" id="success">Thank you. Your enquiry has been captured on this demo form.
+                    <p class="form-success" id="success">
                     </p>
                 </form>
             </div>
@@ -78,6 +93,7 @@
         <div class="container copyright">© 2026 Apex Skill Hunt. All Rights Reserved.</div>
     </footer>
     <script src="script.js"></script>
+<script src="theme.js" defer></script>
 </body>
 
 </html>

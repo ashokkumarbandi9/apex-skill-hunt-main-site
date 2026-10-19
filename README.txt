@@ -1,57 +1,38 @@
-Apex Skill Hunt Premium Website
-Pages: Home, About Us, Contact
-Theme: dark cinematic black, metallic silver and gold; rounded cards; premium serif/display typography; student imagery; pop-in scroll animations.
-Upload all files to Hostinger public_html with index.html at the root.
-The contact form is currently frontend-only and ready to connect to Supabase/EmailJS/Formspree.
+# Apex Skill Hunt — Cinematic Website Upgrade
+
+This package keeps the existing multi-page static site and adds a real Three.js WebGL hero sculpture plus GSAP ScrollTrigger scroll choreography.
+
+## What changed
+- High-contrast charcoal, crisp white and champagne-gold styling retained.
+- Three.js torus-knot sculpture, orbital rings, and lightweight particle field in the homepage hero.
+- Scroll-controlled 3D rotation and pointer-responsive motion on desktop.
+- GSAP ScrollTrigger reveals/staggered service cards and hero scroll depth.
+- Reduced-motion preference and CSS fallback if WebGL/CDN is unavailable.
+- Existing assets, pages, navigation, exam portal link, and Web3Forms contact integration retained.
+
+## Run locally
+Open `index.html` in a modern browser with internet access. For best results, serve the folder using a local static server (for example VS Code Live Server), because `cinematic.js` imports Three.js as an ES module from a CDN.
+
+## Deploy
+Commit/push the contents of `apex-skill-hunt-main-site/` to the existing GitHub repository connected to Cloudflare Pages. No build command is required for this static site. Do not upload the outer ZIP itself as the website root.
+
+## External libraries
+- GSAP 3.13 + ScrollTrigger from jsDelivr CDN
+- Three.js 0.180 from jsDelivr CDN
+
+These libraries are loaded remotely, so the deployed site needs an internet connection. The base website remains readable if they fail to load.
 
 
-LATEST UPDATE
-- Added a Mock Test tab to the top navigation on Home, About Us, and Contact pages.
-- The tab is currently a placeholder because the external Mock Test URL has not been supplied.
-- Added gold/champagne glow and highlight effects for navigation, buttons, cards, form fields, and links.
-- When the Mock Test URL is ready, replace href="#" on .mock-test-link with the provided URL and remove data-link-pending="true".
+## Theme system
+- Header toggle switches between Obsidian Gold dark mode and Arctic Silver light mode on all three pages.
+- First visit follows the visitor's operating-system appearance preference.
+- A manual choice is saved in localStorage (`apex-theme`) and restored on subsequent visits.
+- The toggle has an accessible label, pressed state, title, and keyboard support.
+- Theme changes animate smoothly; reduced-motion preferences are respected.
 
 
-LATEST UPDATE — ABOUT US TEAM
-- Added leadership cards on About Us:
-  1. Ashok Kumar Bandi — Founder & CEO; Tech and non-tech trainer with 10+ years of experience.
-  2. Arul Shekar — Verbal Head; 10+ years of experience in verbal training.
-  3. Shresta Gaddam — Technical Head & Social Media.
-- Photo placeholders are included for all three people and can be replaced when portraits are ready.
+## Homepage layout update
+- Classroom image gallery now appears directly after the Programs/What We Do section.
+- Hero uses the trainer-visible teaching photo with adjusted crop/position to show more of the instructor and classroom.
 
-
-LATEST UPDATE — LEADERSHIP TITLES
-- Shresta Gaddam — Social Media Head.
-- M G Asghar — Technical Head.
-- Each person has an individual profile card and photo placeholder.
-
-
-LATEST UPDATE — LEADERSHIP PHOTOS
-- Added supplied portraits for Ashok Kumar Bandi, Arul Shekar, Shresta Gaddam, and M G Asghar.
-- Added gentle hover zoom and brightness effects to the portraits.
-- Keep the assets folder alongside the HTML and CSS files.
-
-
-LATEST UPDATE — CENTERED TEAM PHOTOS
-- Replaced leadership card images with the latest supplied portraits.
-- Used centered portrait crops and face-focused image positioning for the About Us cards.
-- Kept the hover zoom effect subtle so faces remain clearly visible.
-
-
-LATEST UPDATE — HOME CLASSROOM GALLERY
-- Added the supplied real classroom/training photos to the Home page.
-- Added two continuous horizontal photo lanes moving in opposite directions.
-- Each photo has a relevant caption, a dark caption gradient, and a gentle hover zoom/glow.
-- Kept the leadership team and all CEO/head profiles on the About Us page.
-- Classroom photos are stored under assets/classroom/.
-
-
-PAGE CONTENT ORGANIZATION
-- Home page: real classroom/training photos, captions, and the continuously moving two-row classroom gallery.
-- About Us page: company story, mission/vision/approach, and the four-person leadership/team profile section only. Removed the redundant generic "Our Teams" service-card section to keep this page focused on the people.
-
-
-LATEST LAYOUT UPDATE
-- About Us order: page intro, Founder and leadership team first, then company story, then Mission/Vision/Approach, then contact CTA.
-- Home page: classroom gallery moved directly after the hero so visitors see training photos without scrolling far.
-- Removed the first classroom image from the gallery and adjusted the repeated marquee sequence.
+Latest homepage polish: theme switch is a discreet icon at the far right of the header; the hero uses the animated 3D visual without a face/photo; the supplied Apex Skill Hunt Coding Lab artwork is placed in the classroom image tiles.
